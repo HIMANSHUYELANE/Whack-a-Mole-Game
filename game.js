@@ -4,9 +4,16 @@ let score = 0;
 let gameover = false;
 // let audioele=new Audio('')
 let theam = new Audio();
-
+let btn1 = document.getElementById("btn1");
+let btn2 = document.getElementById("btn2");
+function refresh() {
+  btn2.classList.toggle("hidden");
+  btn1.classList.toggle("hidden");
+  location.reload();
+}
 function start() {
   startgame();
+
   theam.src = "./audio/theme.mp3";
   theam.play();
 }
@@ -88,12 +95,16 @@ function setscore() {
       "GAME OVER: " + score.toString());
     audio.src = "./audio/gameOver.mp3";
     theam.pause();
+    btn2.classList.toggle("hidden");
+    btn1.classList.toggle("hidden");
     gameover = true;
   } else if (this != currmario) {
     let score3 = (document.getElementById("score").innerHTML =
       "GAME OVER: " + score.toString());
     audio.src = "./audio/gameOver.mp3";
     theam.pause();
+    btn2.classList.toggle("hidden");
+    btn1.classList.toggle("hidden");
     gameover = true;
   }
   audio.play();
