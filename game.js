@@ -27,8 +27,8 @@ function startgame() {
     tile.addEventListener("click", setscore);
   }
 
-  setInterval(setmario, 1500);
-  setInterval(setplant, 2500);
+  setInterval(setmario, 1000);
+  setInterval(setplant, 2000);
   return;
 }
 
